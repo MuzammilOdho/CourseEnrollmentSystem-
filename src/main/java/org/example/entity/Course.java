@@ -1,5 +1,8 @@
 package org.example.entity;
 
+import org.springframework.stereotype.Component;
+
+
 public class Course {
     private int id;
     private String name;

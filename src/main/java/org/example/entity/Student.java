@@ -5,9 +5,18 @@ public class Student {
     private String name ;
     private int userId;
 
-    public Student(int id, String name) {
+    public Student(int id, int userId,String name) {
         this.id = id;
+        this.userId = userId;
         this.name = name;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public int getId() {
