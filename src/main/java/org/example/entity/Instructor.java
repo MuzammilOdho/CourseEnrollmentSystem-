@@ -5,6 +5,11 @@ public class Instructor {
     private String name ;
     private int userId;
 
+    public Instructor(String name , int userId) {
+        this.name = name;
+        this.userId = userId;
+    }
+
     public Instructor(int id, String name, int userId) {
         this.id = id;
         this.name = name;

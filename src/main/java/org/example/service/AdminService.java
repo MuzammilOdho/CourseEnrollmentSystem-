@@ -1,13 +1,12 @@
 package org.example.service;
 
 import org.example.entity.Course;
-import org.example.entity.Instructor;
-import org.example.entity.Student;
+import org.example.entity.User;
 
 public interface AdminService {
 
-    void registerStudent(Student student);
-    void registerInstructor(Instructor instructor);
+    void registerStudent(User user);
+    void registerInstructor(User user);
     void createCourse(Course course);
 
 }

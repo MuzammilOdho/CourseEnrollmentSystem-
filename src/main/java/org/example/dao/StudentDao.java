@@ -25,8 +25,8 @@ public class StudentDao {
 
     public Student findByUserId(int userId) {
         String sql = "SELECT id, user_id , full_name FROM students WHERE user_id = ?";
-
         return jdbcTemplate.queryForObject(sql,RowMappers.STUDENT_ROW_MAPPER,userId );
     }
+
 
 }

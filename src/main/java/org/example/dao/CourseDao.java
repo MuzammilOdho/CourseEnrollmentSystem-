@@ -24,6 +24,11 @@ public class CourseDao {
         jdbcTemplate.update(sql, course.getName(), course.getCapacity(), course.getInstructorId());
     }
 
+    public List<Course> findAll() {
+        String sql = "SELECT * FROM courses";
+        return jdbcTemplate.query(sql,RowMappers.COURSE_ROW_MAPPER);
+    }
+
     public List<Course> findByInstructorId(int instructorId) {
         String sql = "SELECT * FROM courses WHERE instructor_id = ?";
         return jdbcTemplate.query(sql, RowMappers.COURSE_ROW_MAPPER, instructorId);
