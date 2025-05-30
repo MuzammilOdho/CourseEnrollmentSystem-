@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class InstructorDao {
 
@@ -23,6 +25,11 @@ public class InstructorDao {
     public Instructor findByUserId(int userId) {
         String sql = "SELECT * FROM instructors WHERE user_id = ?";
         return jdbcTemplate.queryForObject(sql, RowMappers.Instructor_ROW_MAPPER, userId);
+    }
+
+    public List<Instructor> findAll() {
+        String sql = "SELECT * FROM instructors";
+        return jdbcTemplate.query(sql, RowMappers.Instructor_ROW_MAPPER);
     }
 
 }

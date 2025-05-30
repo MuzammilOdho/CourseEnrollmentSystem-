@@ -9,6 +9,11 @@ public class Course {
     private int capacity;
     private int instructorId;
 
+    public Course(String name, int capacity, int instructorId) {
+        this.name = name;
+        this.capacity = capacity;
+        this.instructorId = instructorId;
+    }
 
     public Course(int id, String name, int capacity, int instructorId) {
         this.id = id;
@@ -47,5 +52,10 @@ public class Course {
 
     public void setInstructorId(int instructorId) {
         this.instructorId = instructorId;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Course id: %d  | Course Name: %s ", id, name);
     }
 }

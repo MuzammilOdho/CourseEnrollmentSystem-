@@ -39,5 +39,10 @@ public class Instructor {
     public int getUserId() {
         return userId;
     }
+
+    @Override
+    public String toString() {
+        return ("Instructor name: " + name + " instructor id: " + id);
+    }
 }
 

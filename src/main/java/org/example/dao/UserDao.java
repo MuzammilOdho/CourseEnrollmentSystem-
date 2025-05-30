@@ -18,9 +18,9 @@ public class UserDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void save(User user) {
+    public void save(String username, String password, String role) {
         String sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
-        jdbcTemplate.update(sql, user.getUsername(), user.getPassword(), user.getRole().name());
+        jdbcTemplate.update(sql, username, password, role);
     }
 
     public User findByUsername(String username) {
