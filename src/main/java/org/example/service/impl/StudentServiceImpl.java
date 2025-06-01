@@ -4,6 +4,7 @@ import org.example.dao.CourseDao;
 import org.example.dao.StudentDao;
 import org.example.entity.Course;
 import org.example.entity.Student;
+import org.example.exception.UserNotFoundException;
 import org.example.service.EnrollmentService;
 import org.example.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Course> viewEnrolledCourses(int studentId) {
-        return enrollmentService.getCoursesForStudent(studentId);
+    public List<Course> viewEnrolledCourses(int userId) {
+        return enrollmentService.getCoursesForStudent(userId);
     }
 
     @Override
@@ -36,6 +37,12 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student getStudentById(int userId) {
-    return studentDao.findByUserId(userId);
+        try {
+        return studentDao.findByUserId(userId);
+
+        }catch (UserNotFoundException e){
+            throw new UserNotFoundException("Invalid student id");
+        }
+
     }
 }

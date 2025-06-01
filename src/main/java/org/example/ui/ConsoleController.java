@@ -7,22 +7,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class ConsoleController {
 
-        @Autowired
-        private UserUI userUI;
+        private final UserUI userUI;
+        private final AdminUI adminUI;
+        private final StudentUI studentUI;
+        private final InstructorUI instructorUI;
+        private final Menu menu;
 
         @Autowired
-        private AdminUI adminUI;
+    public ConsoleController(UserUI userUI, AdminUI adminUI,
+                             StudentUI studentUI, InstructorUI instructorUI,
+                             Menu menu) {
+        this.userUI = userUI;
+        this.adminUI = adminUI;
+        this.studentUI = studentUI;
+        this.instructorUI = instructorUI;
+        this.menu = menu;
+    }
 
-        @Autowired
-        private StudentUI studentUI;
-
-        @Autowired
-        private InstructorUI instructorUI;
-
-        @Autowired
-        private Menu menu;
-
-        public void start() {
+    public void start() {
             boolean running = true;
 
             while (running) {

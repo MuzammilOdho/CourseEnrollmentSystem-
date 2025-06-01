@@ -1,5 +1,6 @@
 package org.example.ui;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
@@ -7,7 +8,12 @@ import java.util.Scanner;
 @Component
 public class Menu {
 
-    private InputHandler inputHandler;
+    private final InputHandler inputHandler;
+
+    @Autowired
+    public Menu(InputHandler inputHandler) {
+        this.inputHandler = inputHandler;
+    }
 
     public int displayLoginMenu() {
         System.out.println("===== Course Enrollment System =====");

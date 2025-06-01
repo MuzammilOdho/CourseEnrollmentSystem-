@@ -6,9 +6,8 @@ import org.example.entity.Student;
 import java.util.List;
 
 public interface EnrollmentService {
-    void enrollStudent(int studentId, int courseId);
+    void enrollStudent(int userId, int courseId);
     List<Course> getCoursesForStudent(int studentId);
     List<Student> getStudentsForCourse(int courseId);
-    boolean isStudentAlreadyEnrolled(int studentId, int courseId);
 
 }

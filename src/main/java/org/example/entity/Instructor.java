@@ -42,7 +42,7 @@ public class Instructor {
 
     @Override
     public String toString() {
-        return ("Instructor name: " + name + " instructor id: " + id);
+        return String.format("Instructor Id: %d | Instructor Name: %s",  id , name);
     }
 }
 

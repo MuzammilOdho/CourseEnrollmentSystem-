@@ -8,8 +8,9 @@ import java.util.List;
 
 public interface InstructorService {
 
-    List<Course> viewAssignedCourses(int instructorId);
-    List<Student> viewEnrolledStudents(int instructorId);
+    List<Course> viewAssignedCourses(int userId);
+    List<Student> viewEnrolledStudents(int userId);
     Instructor getInstructorById(int instructorId);
+    List<Instructor> getAllInstructors();
 
 }

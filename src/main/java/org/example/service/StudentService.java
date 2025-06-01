@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface StudentService {
 
-    List<Course> viewEnrolledCourses(int studentId);
+    List<Course> viewEnrolledCourses(int userId);
     List<Course> viewAllCourses();
     Student getStudentById(int studentId);
 
